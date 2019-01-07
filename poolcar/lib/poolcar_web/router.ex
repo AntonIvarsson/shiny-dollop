@@ -20,7 +20,7 @@ defmodule PoolcarWeb.Router do
     get "/", PageController, :index
   end
 
-  scope "/" do
+  scope "/api" do
     access_pass :routes
   end
 
