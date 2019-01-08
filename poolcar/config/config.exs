@@ -29,7 +29,7 @@ config :phoenix, :json_library, Jason
 
 config :access_pass, AccessPass.Mailer,
   adapter: Bamboo.SendgridAdapter,
-  api_key: "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"
+  api_key: "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"
 
 config :access_pass,
   repo: Poolcar.Repo,
