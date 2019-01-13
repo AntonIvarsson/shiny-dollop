@@ -29,7 +29,7 @@ config :phoenix, :json_library, Jason
 
 config :access_pass, AccessPass.Mailer,
   adapter: Bamboo.SendgridAdapter,
-  api_key: "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"
+  api_key: System.get_env("SENDGRID_SECRET")
 
 config :access_pass,
   repo: Poolcar.Repo,
