@@ -14,14 +14,24 @@ defmodule PoolcarWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug Auth
+  end
+
   scope "/", PoolcarWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
-  scope "/api" do
+  scope "/access" do
+    pipe_through :api
     access_pass :routes
+  end
+
+  scope "/api", PoolcarWeb do
+    pipe_through :auth
+    get "/echo", PageController, :echo
   end
 
   # Other scopes may use custom stacks.
